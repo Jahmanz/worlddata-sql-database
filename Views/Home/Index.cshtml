@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>World Data</title>
+  </head>
+  <body>
+    <h1>World Data</h1>
+    @if (Model!=null)
+    {
+      foreach(var city in Model)
+      {
+        @city.GetName()
+        @city.GetDistrict()
+        @city.GetPopulation()
+      }
+    }
+  </body>
+</html>
