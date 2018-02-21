@@ -14,6 +14,23 @@ namespace WorldData.Controllers
         return View(newCitys);
         }
 
+        [HttpPost("/")]
+        public ActionResult GetPopulation()
+        {
+          int cityPopulation = int.Parse(Request.Form["population"]);
+          List<City> newList = City.GetMostPopulous(cityPopulation);
+          return View("Index", newList);
+        }
+
+        [HttpPost("/new")]
+        public ActionResult Alpha()
+        {
+          string cityName = (Request.Form["name"]);
+          List<City> newList = City.GetAlphabetically(cityName);
+          return View("Index", newList);
+        }
+
+
 
 
     }
